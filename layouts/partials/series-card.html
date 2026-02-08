@@ -1,0 +1,20 @@
+<div class="series-card">
+   <a href="{{ .Permalink }}">
+      <div class="series-thumbnail">
+         {{ if .Params.thumbnail }}
+         <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+         {{ else }}
+         <div class="placeholder-thumbnail">
+            <span>🎬</span>
+         </div>
+         {{ end }}
+         <div class="series-overlay">
+            <span class="video-count">{{ len .Pages }} videos</span>
+         </div>
+      </div>
+      <div class="series-info">
+         <h2>{{ .Title }}</h2>
+         <p>{{ .Params.description }}</p>
+      </div>
+   </a>
+</div>

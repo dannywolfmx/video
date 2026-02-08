@@ -1,0 +1,19 @@
+baseURL = "/"
+languageCode = "es"
+title = "Series de Videos"
+
+[params]
+  description = "Plataforma de series de videos"
+  author = "Daniel"
+
+[taxonomies]
+  series = "series"
+  category = "categories"
+  tag = "tags"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Inicio"
+    url = "/"
+    weight = 1

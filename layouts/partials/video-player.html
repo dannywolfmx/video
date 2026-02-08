@@ -1,0 +1,10 @@
+{{ if .Params.videoUrl }}
+<video id="videoPlayer" class="video-player" controls>
+   <source src="{{ .Params.videoUrl }}" type="video/mp4">
+   Tu navegador no soporta la reproducción de videos.
+</video>
+{{ else }}
+<div class="no-video">
+   <p>No hay video disponible</p>
+</div>
+{{ end }}

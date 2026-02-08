@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>{{ .Title }} | {{ .Site.Title }}</title>
+   <meta name="description" content="{{ .Site.Params.description }}">
+   <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+   <header>
+      <nav class="navbar">
+         <div class="container">
+            <h1 class="logo"><a href="/">{{ .Site.Title }}</a></h1>
+         </div>
+      </nav>
+   </header>
+
+   <main>
+      {{ block "main" . }}{{ end }}
+   </main>
+
+   <footer>
+      <div class="container">
+         <p>&copy; {{ now.Year }} {{ .Site.Title }}</p>
+      </div>
+   </footer>
+
+   <script src="/js/video-player.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<aside class="video-sidebar">
+   <h3>Videos de la serie</h3>
+   <div class="sidebar-videos">
+      {{ $currentPage := . }}
+      {{ $currentSeries := .Params.series }}
+
+      {{ range where .Site.RegularPages "Params.series" $currentSeries }}
+      <div class="sidebar-video-item {{ if eq .Permalink $currentPage.Permalink }}active{{ end }}">
+         <a href="{{ .Permalink }}">
+            <div class="sidebar-thumbnail">
+               {{ if .Params.thumbnail }}
+               <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+               {{ else }}
+               <div class="placeholder-thumbnail-small">
+                  <span>📹</span>
+               </div>
+               {{ end }}
+               {{ if .Params.duration }}
+               <span class="duration-small">{{ .Params.duration }}</span>
+               {{ end }}
+            </div>
+            <div class="sidebar-video-info">
+               <span class="episode-number">{{ .Params.episode }}</span>
+               <h4>{{ .Title }}</h4>
+            </div>
+         </a>
+      </div>
+      {{ end }}
+   </div>
+</aside>

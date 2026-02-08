@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="container">
+   <div class="series-header">
+      <h1>{{ .Title }}</h1>
+      <p>{{ .Content }}</p>
+   </div>
+
+   <div class="video-list">
+      {{ range .Pages.ByParam "episode" }}
+      <div class="video-item">
+         <a href="{{ .Permalink }}">
+            <div class="video-thumbnail">
+               {{ if .Params.thumbnail }}
+               <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+               {{ else }}
+               <div class="placeholder-thumbnail">
+                  <span>📹</span>
+               </div>
+               {{ end }}
+               {{ if .Params.duration }}
+               <span class="duration">{{ .Params.duration }}</span>
+               {{ end }}
+            </div>
+            <div class="video-info">
+               <h3>{{ .Params.episode }}. {{ .Title }}</h3>
+               <p>{{ .Params.description }}</p>
+            </div>
+         </a>
+      </div>
+      {{ end }}
+   </div>
+</div>
+{{ end }}
