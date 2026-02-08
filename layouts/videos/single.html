@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="video-page">
+<div class="video-page" data-autoplay="true">
    <div class="video-player-container">
       <div class="player-wrapper">
          {{ partial "video-player.html" . }}
@@ -29,4 +29,20 @@
 
    {{ partial "video-sidebar.html" . }}
 </div>
+
+{{/* Pasar URL del siguiente video para autoplay */}}
+{{ $currentSeries := .Params.series }}
+{{ $currentEpisode := .Params.episode }}
+{{ $nextVideo := "" }}
+{{ range where .Site.RegularPages "Params.series" $currentSeries }}
+{{ if eq .Params.episode (add $currentEpisode 1) }}
+{{ $nextVideo = .Permalink }}
+{{ end }}
+{{ end }}
+{{ if $nextVideo }}
+<script>
+   window.nextVideoUrl = "{{ $nextVideo }}";
+</script>
+{{ end }}
+
 {{ end }}

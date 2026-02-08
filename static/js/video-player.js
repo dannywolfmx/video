@@ -22,6 +22,19 @@ document.addEventListener('DOMContentLoaded', function () {
       // Limpiar progreso cuando el video termina
       videoPlayer.addEventListener('ended', function () {
          localStorage.removeItem('video-time-' + videoId);
+
+         // Autoplay: reproducir siguiente video si existe
+         const videoPage = document.querySelector('.video-page');
+         const autoplayEnabled = videoPage && videoPage.dataset.autoplay === 'true';
+
+         if (autoplayEnabled && window.nextVideoUrl) {
+            // Mostrar notificación antes de cambiar
+            showAutoplayNotification();
+
+            setTimeout(function () {
+               window.location.href = window.nextVideoUrl;
+            }, 3000); // Esperar 3 segundos antes de cambiar
+         }
       });
 
       // Control de teclado
@@ -121,5 +134,31 @@ function shareVideo() {
       navigator.clipboard.writeText(window.location.href).then(() => {
          alert('URL copiada al portapapeles');
       });
+   }
+}
+
+function showAutoplayNotification() {
+   // Crear notificación de autoplay
+   const notification = document.createElement('div');
+   notification.className = 'autoplay-notification';
+   notification.innerHTML = `
+      <p>Reproduciendo siguiente video en 3 segundos...</p>
+      <button onclick="cancelAutoplay()">Cancelar</button>
+   `;
+   document.body.appendChild(notification);
+
+   // Auto-remover después de 3 segundos
+   setTimeout(() => {
+      if (notification.parentNode) {
+         notification.remove();
+      }
+   }, 3000);
+}
+
+function cancelAutoplay() {
+   window.nextVideoUrl = null;
+   const notification = document.querySelector('.autoplay-notification');
+   if (notification) {
+      notification.remove();
    }
 }
