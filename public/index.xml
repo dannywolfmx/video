@@ -2,94 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NueTube</title>
-    <link>//localhost:1313/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on NueTube</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sun, 08 Feb 2026 19:46:58 -0600</lastBuildDate>
-    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Episodio 10</title>
-      <link>//localhost:1313/videos/sousou-no-frieren/episodio-10/</link>
+      <link>http://localhost:1313/videos/sousou-no-frieren/episodio-10/</link>
       <pubDate>Sun, 08 Feb 2026 19:46:58 -0600</pubDate>
-      <guid>//localhost:1313/videos/sousou-no-frieren/episodio-10/</guid>
+      <guid>http://localhost:1313/videos/sousou-no-frieren/episodio-10/</guid>
       <description></description>
     </item>
     <item>
       <title>Episodio 9</title>
-      <link>//localhost:1313/videos/sousou-no-frieren/episodio-9/</link>
+      <link>http://localhost:1313/videos/sousou-no-frieren/episodio-9/</link>
       <pubDate>Sun, 08 Feb 2026 19:46:58 -0600</pubDate>
-      <guid>//localhost:1313/videos/sousou-no-frieren/episodio-9/</guid>
+      <guid>http://localhost:1313/videos/sousou-no-frieren/episodio-9/</guid>
       <description></description>
     </item>
     <item>
       <title>Episodio 11</title>
-      <link>//localhost:1313/videos/sousou-no-frieren/episodio-11/</link>
+      <link>http://localhost:1313/videos/sousou-no-frieren/episodio-11/</link>
       <pubDate>Sun, 08 Feb 2026 19:46:57 -0600</pubDate>
-      <guid>//localhost:1313/videos/sousou-no-frieren/episodio-11/</guid>
+      <guid>http://localhost:1313/videos/sousou-no-frieren/episodio-11/</guid>
       <description></description>
     </item>
     <item>
       <title>Episodio 12</title>
-      <link>//localhost:1313/videos/sousou-no-frieren/episodio-12/</link>
+      <link>http://localhost:1313/videos/sousou-no-frieren/episodio-12/</link>
       <pubDate>Sun, 08 Feb 2026 19:46:57 -0600</pubDate>
-      <guid>//localhost:1313/videos/sousou-no-frieren/episodio-12/</guid>
+      <guid>http://localhost:1313/videos/sousou-no-frieren/episodio-12/</guid>
       <description></description>
     </item>
     <item>
       <title>Episodio 3</title>
-      <link>//localhost:1313/videos/sousou-no-frieren/episodio-3/</link>
+      <link>http://localhost:1313/videos/sousou-no-frieren/episodio-3/</link>
       <pubDate>Sun, 08 Feb 2026 19:46:57 -0600</pubDate>
-      <guid>//localhost:1313/videos/sousou-no-frieren/episodio-3/</guid>
+      <guid>http://localhost:1313/videos/sousou-no-frieren/episodio-3/</guid>
       <description></description>
     </item>
     <item>
       <title>Episodio 4</title>
-      <link>//localhost:1313/videos/sousou-no-frieren/episodio-4/</link>
+      <link>http://localhost:1313/videos/sousou-no-frieren/episodio-4/</link>
       <pubDate>Sun, 08 Feb 2026 19:46:57 -0600</pubDate>
-      <guid>//localhost:1313/videos/sousou-no-frieren/episodio-4/</guid>
+      <guid>http://localhost:1313/videos/sousou-no-frieren/episodio-4/</guid>
       <description></description>
     </item>
     <item>
       <title>Episodio 5</title>
-      <link>//localhost:1313/videos/sousou-no-frieren/episodio-5/</link>
+      <link>http://localhost:1313/videos/sousou-no-frieren/episodio-5/</link>
       <pubDate>Sun, 08 Feb 2026 19:46:57 -0600</pubDate>
-      <guid>//localhost:1313/videos/sousou-no-frieren/episodio-5/</guid>
+      <guid>http://localhost:1313/videos/sousou-no-frieren/episodio-5/</guid>
       <description></description>
     </item>
     <item>
       <title>Episodio 6</title>
-      <link>//localhost:1313/videos/sousou-no-frieren/episodio-6/</link>
+      <link>http://localhost:1313/videos/sousou-no-frieren/episodio-6/</link>
       <pubDate>Sun, 08 Feb 2026 19:46:57 -0600</pubDate>
-      <guid>//localhost:1313/videos/sousou-no-frieren/episodio-6/</guid>
+      <guid>http://localhost:1313/videos/sousou-no-frieren/episodio-6/</guid>
       <description></description>
     </item>
     <item>
       <title>Episodio 7</title>
-      <link>//localhost:1313/videos/sousou-no-frieren/episodio-7/</link>
+      <link>http://localhost:1313/videos/sousou-no-frieren/episodio-7/</link>
       <pubDate>Sun, 08 Feb 2026 19:46:57 -0600</pubDate>
-      <guid>//localhost:1313/videos/sousou-no-frieren/episodio-7/</guid>
+      <guid>http://localhost:1313/videos/sousou-no-frieren/episodio-7/</guid>
       <description></description>
     </item>
     <item>
       <title>Episodio 8</title>
-      <link>//localhost:1313/videos/sousou-no-frieren/episodio-8/</link>
+      <link>http://localhost:1313/videos/sousou-no-frieren/episodio-8/</link>
       <pubDate>Sun, 08 Feb 2026 19:46:57 -0600</pubDate>
-      <guid>//localhost:1313/videos/sousou-no-frieren/episodio-8/</guid>
+      <guid>http://localhost:1313/videos/sousou-no-frieren/episodio-8/</guid>
       <description></description>
     </item>
     <item>
       <title>Episodio 1</title>
-      <link>//localhost:1313/videos/sousou-no-frieren/episodio-1/</link>
+      <link>http://localhost:1313/videos/sousou-no-frieren/episodio-1/</link>
       <pubDate>Sun, 08 Feb 2026 17:22:24 -0600</pubDate>
-      <guid>//localhost:1313/videos/sousou-no-frieren/episodio-1/</guid>
+      <guid>http://localhost:1313/videos/sousou-no-frieren/episodio-1/</guid>
       <description></description>
     </item>
     <item>
       <title>Episodio 2</title>
-      <link>//localhost:1313/videos/sousou-no-frieren/episodio-2/</link>
+      <link>http://localhost:1313/videos/sousou-no-frieren/episodio-2/</link>
       <pubDate>Sun, 08 Feb 2026 17:22:24 -0600</pubDate>
-      <guid>//localhost:1313/videos/sousou-no-frieren/episodio-2/</guid>
+      <guid>http://localhost:1313/videos/sousou-no-frieren/episodio-2/</guid>
       <description></description>
     </item>
   </channel>

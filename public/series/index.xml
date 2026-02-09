@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on NueTube</title>
-    <link>//localhost:1313/series/</link>
+    <link>http://localhost:1313/series/</link>
     <description>Recent content in Series on NueTube</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sun, 08 Feb 2026 19:46:58 -0600</lastBuildDate>
-    <atom:link href="//localhost:1313/series/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/series/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sousou-No-Frieren</title>
-      <link>//localhost:1313/series/sousou-no-frieren/</link>
+      <link>http://localhost:1313/series/sousou-no-frieren/</link>
       <pubDate>Sun, 08 Feb 2026 19:46:58 -0600</pubDate>
-      <guid>//localhost:1313/series/sousou-no-frieren/</guid>
+      <guid>http://localhost:1313/series/sousou-no-frieren/</guid>
       <description></description>
     </item>
   </channel>
