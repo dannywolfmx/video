@@ -14,11 +14,6 @@ Thumbs.db
 *.swo
 *~
 
-# Node
-node_modules/
-npm-debug.log
-yarn-error.log
-
 # Temporary files
 *.log
 *.tmp
