@@ -11,7 +11,10 @@
          <a href="{{ .Permalink }}">
             <div class="video-thumbnail">
                {{ if .Params.thumbnail }}
-               <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+               <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" loading="lazy">
+               {{ else if .Params.driveId }}
+               <img src="https://drive.google.com/thumbnail?id={{ .Params.driveId }}&sz=w480" alt="{{ .Title }}"
+                  loading="lazy">
                {{ else }}
                <div class="placeholder-thumbnail">
                   <span>📹</span>

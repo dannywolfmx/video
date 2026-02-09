@@ -5,7 +5,7 @@ draft: false
 series: "sousou-no-frieren"
 episode: 1
 videoId: "Episodio-1"
-videoUrl: "/videos/sousou-no-frieren/episodio-1.mp4"
+driveId: "1inm-2CEBEEDXrnlFH2Lm7j9kYkwKuloA"
 thumbnail: ""
 duration: "26:17"
 description: "Primer episodio de Sousou no Frieren"

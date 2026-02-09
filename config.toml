@@ -1,9 +1,9 @@
 baseURL = "/"
 languageCode = "es"
-title = "Series de Videos"
+title = "NueTube"
 
 [params]
-  description = "Plataforma de series de videos"
+  description = ""
   author = "Daniel"
 
 [taxonomies]

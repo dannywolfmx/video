@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Videos on Series de Videos</title>
+    <title>Videos on NueTube</title>
     <link>//localhost:1313/videos/</link>
-    <description>Recent content in Videos on Series de Videos</description>
+    <description>Recent content in Videos on NueTube</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate></lastBuildDate>

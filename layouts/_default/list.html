@@ -1,10 +1,5 @@
 {{ define "main" }}
 <div class="container">
-   <section class="hero">
-      <h1>Series de Videos</h1>
-      <p>Explora nuestra colección de series educativas</p>
-   </section>
-
    <section class="series-grid">
       {{ range .Sections }}
       {{ partial "series-card.html" . }}

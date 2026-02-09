@@ -1,8 +1,20 @@
 {{ if .Params.videoUrl }}
+{{ if hasPrefix .Params.videoUrl "http" }}
+{{/* Video embebido de Google Drive u otra fuente externa */}}
+<iframe id="videoPlayer" class="video-player" src="{{ .Params.videoUrl }}" allow="autoplay" allowfullscreen>
+</iframe>
+{{ else }}
+{{/* Video local */}}
 <video id="videoPlayer" class="video-player" controls>
    <source src="{{ .Params.videoUrl }}" type="video/mp4">
    Tu navegador no soporta la reproducción de videos.
 </video>
+{{ end }}
+{{ else if .Params.driveId }}
+{{/* Google Drive con ID */}}
+<iframe id="videoPlayer" class="video-player" src="https://drive.google.com/file/d/{{ .Params.driveId }}/preview"
+   allow="autoplay" allowfullscreen>
+</iframe>
 {{ else }}
 <div class="no-video">
    <p>No hay video disponible</p>

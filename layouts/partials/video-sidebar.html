@@ -4,12 +4,15 @@
       {{ $currentPage := . }}
       {{ $currentSeries := .Params.series }}
 
-      {{ range where .Site.RegularPages "Params.series" $currentSeries }}
+      {{ range sort (where .Site.RegularPages "Params.series" $currentSeries) "Params.episode" }}
       <div class="sidebar-video-item {{ if eq .Permalink $currentPage.Permalink }}active{{ end }}">
          <a href="{{ .Permalink }}">
             <div class="sidebar-thumbnail">
                {{ if .Params.thumbnail }}
-               <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+               <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" loading="lazy">
+               {{ else if .Params.driveId }}
+               <img src="https://drive.google.com/thumbnail?id={{ .Params.driveId }}&sz=w320" alt="{{ .Title }}"
+                  loading="lazy">
                {{ else }}
                <div class="placeholder-thumbnail-small">
                   <span>📹</span>

@@ -5,8 +5,29 @@
          {{ partial "video-player.html" . }}
       </div>
 
+      {{/* Botón de siguiente episodio */}}
+      {{ $currentSeries := .Params.series }}
+      {{ $currentEpisode := .Params.episode }}
+      {{ $nextVideo := "" }}
+      {{ $nextEpisodeNum := 0 }}
+      {{ range where .Site.RegularPages "Params.series" $currentSeries }}
+      {{ if eq .Params.episode (add $currentEpisode 1) }}
+      {{ $nextVideo = .Permalink }}
+      {{ $nextEpisodeNum = .Params.episode }}
+      {{ end }}
+      {{ end }}
+      {{ if $nextVideo }}
+      <div class="next-episode-btn">
+         <a href="{{ $nextVideo }}">
+            <span class="next-label">Siguiente</span>
+            <span class="next-episode">Episodio {{ $nextEpisodeNum }}</span>
+            <span class="next-arrow">▶</span>
+         </a>
+      </div>
+      {{ end }}
+
       <div class="video-details">
-         <h1>{{ .Title }}</h1>
+         <h1>{{ .Parent.Title }} - {{ .Title }}</h1>
          <div class="video-meta">
             <span class="episode">Episodio {{ .Params.episode }}</span>
             {{ if .Params.duration }}
