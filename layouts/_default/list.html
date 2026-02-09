@@ -1,9 +1,49 @@
 {{ define "main" }}
 <div class="container">
+   {{ if .Sections }}
+   {{/* Si hay subsecciones, mostrar tarjetas de series */}}
    <section class="series-grid">
       {{ range .Sections }}
       {{ partial "series-card.html" . }}
       {{ end }}
    </section>
+   {{ else if .Pages }}
+   {{/* Si hay páginas, mostrar lista de animes */}}
+   <div class="series-header">
+      <h1>{{ .Title }}</h1>
+      {{ if .Content }}
+      <div class="series-description">{{ .Content }}</div>
+      {{ end }}
+   </div>
+   <div class="video-list">
+      {{ range .Pages }}
+      <div class="video-item">
+         <a href="{{ .Permalink }}">
+            <div class="video-thumbnail">
+               {{ if .Params.thumbnail }}
+               <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" loading="lazy">
+               {{ else if .Params.driveId }}
+               <img src="https://drive.google.com/thumbnail?id={{ .Params.driveId }}&sz=w480" alt="{{ .Title }}"
+                  loading="lazy">
+               {{ else }}
+               <div class="placeholder-thumbnail">
+                  <span>🎬</span>
+               </div>
+               {{ end }}
+               {{ if .Params.duration }}
+               <span class="duration">{{ .Params.duration }}</span>
+               {{ end }}
+            </div>
+            <div class="video-info">
+               <h3>{{ .Title }}</h3>
+               {{ if .Params.description }}
+               <p>{{ .Params.description }}</p>
+               {{ end }}
+            </div>
+         </a>
+      </div>
+      {{ end }}
+   </div>
+   {{ end }}
 </div>
 {{ end }}

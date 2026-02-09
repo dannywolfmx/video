@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="video-page video-page--fullwidth" data-autoplay="true">
+   <div class="video-player-container">
+      <div class="player-wrapper">
+         {{ partial "video-player.html" . }}
+      </div>
+
+      <div class="video-details">
+         <h1>{{ .Title }}</h1>
+         <div class="video-meta">
+            {{ if .Params.duration }}
+            <span class="duration">⏱ {{ .Params.duration }}</span>
+            {{ end }}
+            <span class="date">📅 {{ .Date.Format "2 Jan 2006" }}</span>
+         </div>
+         <div class="video-description">
+            {{ .Content }}
+         </div>
+         {{ if .Params.tags }}
+         <div class="tags">
+            {{ range .Params.tags }}
+            <a href='{{ "tags/" | absURL }}{{ . | urlize }}' class="tag">{{ . }}</a>
+            {{ end }}
+         </div>
+         {{ end }}
+      </div>
+   </div>
+</div>
+{{ end }}

@@ -1,0 +1,87 @@
+{{ define "main" }}
+{{ if .Sections }}
+{{/* Si hay subsecciones (estamos en /peliculas/), mostrar tarjetas de series */}}
+<div class="container">
+   <section class="series-grid">
+      {{ range .Sections }}
+      {{ partial "series-card.html" . }}
+      {{ end }}
+   </section>
+</div>
+{{ else if eq (len .Pages) 1 }}
+{{/* Si solo hay una película, mostrar el reproductor directamente */}}
+{{ $movie := index .Pages 0 }}
+<div class="video-page video-page--fullwidth" data-autoplay="true">
+   <div class="video-player-container">
+      <div class="player-wrapper">
+         {{ with $movie }}
+         {{ partial "video-player.html" . }}
+         {{ end }}
+      </div>
+
+      <div class="video-details">
+         <h1>{{ .Title }}</h1>
+         <div class="video-meta">
+            {{ if $movie.Params.duration }}
+            <span class="duration">⏱ {{ $movie.Params.duration }}</span>
+            {{ end }}
+            <span class="date">📅 {{ $movie.Date.Format "2 Jan 2006" }}</span>
+         </div>
+         <div class="video-description">
+            {{ .Content }}
+            {{ if $movie.Content }}
+            {{ $movie.Content }}
+            {{ end }}
+         </div>
+         {{ if $movie.Params.tags }}
+         <div class="tags">
+            {{ range $movie.Params.tags }}
+            <a href='{{ "tags/" | absURL }}{{ . | urlize }}' class="tag">{{ . }}</a>
+            {{ end }}
+         </div>
+         {{ end }}
+      </div>
+   </div>
+</div>
+{{ else }}
+{{/* Si hay múltiples películas, mostrar lista */}}
+<div class="container">
+   <div class="series-header">
+      <h1>{{ .Title }}</h1>
+      {{ if .Content }}
+      <p>{{ .Content }}</p>
+      {{ end }}
+   </div>
+
+   <div class="video-list">
+      {{ range .Pages }}
+      <div class="video-item">
+         <a href="{{ .Permalink }}">
+            <div class="video-thumbnail">
+               {{ if .Params.thumbnail }}
+               <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" loading="lazy">
+               {{ else if .Params.driveId }}
+               <img src="https://drive.google.com/thumbnail?id={{ .Params.driveId }}&sz=w480" alt="{{ .Title }}"
+                  loading="lazy">
+               {{ else }}
+               <div class="placeholder-thumbnail">
+                  <span>🎬</span>
+               </div>
+               {{ end }}
+               {{ if .Params.duration }}
+               <span class="duration">{{ .Params.duration }}</span>
+               {{ end }}
+            </div>
+            <div class="video-info">
+               <h3>{{ .Title }}</h3>
+               {{ if .Params.description }}
+               <p>{{ .Params.description }}</p>
+               {{ end }}
+            </div>
+         </a>
+      </div>
+      {{ end }}
+   </div>
+</div>
+{{ end }}
+{{ end }}

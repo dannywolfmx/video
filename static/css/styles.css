@@ -134,7 +134,7 @@ a:hover {
 .series-thumbnail {
    position: relative;
    width: 100%;
-   height: 200px;
+   aspect-ratio: 9/16;
    background: linear-gradient(135deg, rgba(0, 255, 255, 0.3) 0%, rgba(255, 0, 255, 0.3) 100%);
    overflow: hidden;
    border-bottom: 1px solid var(--cyan);
@@ -206,7 +206,17 @@ a:hover {
 /* Video list */
 .video-list {
    display: grid;
-   gap: 1.25rem;
+   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+   gap: 1.5rem;
+}
+
+/* Video list para episodios con aspect ratio 16:9 */
+.video-list--episodes {
+   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.video-list--episodes .video-thumbnail {
+   aspect-ratio: 16/9;
 }
 
 .video-item {
@@ -226,16 +236,16 @@ a:hover {
 
 .video-item a {
    display: flex;
-   gap: 1rem;
+   flex-direction: column;
 }
 
 .video-thumbnail {
    position: relative;
-   width: 280px;
-   height: 168px;
+   width: 100%;
+   aspect-ratio: 9/16;
    flex-shrink: 0;
    background: linear-gradient(135deg, rgba(255, 0, 255, 0.3) 0%, rgba(0, 255, 255, 0.3) 100%);
-   border-right: 1px solid var(--magenta);
+   border-bottom: 1px solid var(--magenta);
 }
 
 .video-thumbnail img {
@@ -286,6 +296,20 @@ a:hover {
    max-width: 1280px;
    margin: 0 auto;
    padding: 2rem 20px;
+}
+
+/* Video page fullwidth (para películas) */
+.video-page--fullwidth {
+   grid-template-columns: 1fr;
+   max-width: 1400px;
+}
+
+.video-page--fullwidth .video-player-container {
+   max-width: 100%;
+}
+
+.video-page--fullwidth .video-player {
+   max-height: 750px;
 }
 
 .video-player-container {

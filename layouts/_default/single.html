@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="container">
+   <article class="single-page">
+      <header class="page-header">
+         <h1>{{ .Title }}</h1>
+         <div class="page-meta">
+            <span class="date">📅 {{ .Date.Format "2 Jan 2006" }}</span>
+            {{ if .Params.duration }}
+            <span class="duration">⏱ {{ .Params.duration }}</span>
+            {{ end }}
+         </div>
+      </header>
+
+      <div class="page-content">
+         {{ .Content }}
+      </div>
+
+      {{ if .Params.tags }}
+      <div class="tags">
+         {{ range .Params.tags }}
+         <a href='{{ "tags/" | absURL }}{{ . | urlize }}' class="tag">{{ . }}</a>
+         {{ end }}
+      </div>
+      {{ end }}
+   </article>
+</div>
+{{ end }}

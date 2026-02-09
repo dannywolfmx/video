@@ -2,10 +2,12 @@
 <div class="container">
    <div class="series-header">
       <h1>{{ .Title }}</h1>
+      {{ if .Content }}
       <p>{{ .Content }}</p>
+      {{ end }}
    </div>
 
-   <div class="video-list">
+   <div class="video-list video-list--episodes">
       {{ range .Pages.ByParam "episode" }}
       <div class="video-item">
          <a href="{{ .Permalink }}">
@@ -25,8 +27,10 @@
                {{ end }}
             </div>
             <div class="video-info">
-               <h3>{{ .Params.episode }}. {{ .Title }}</h3>
+               <h3>{{ .Title }}</h3>
+               {{ if .Params.description }}
                <p>{{ .Params.description }}</p>
+               {{ end }}
             </div>
          </a>
       </div>
