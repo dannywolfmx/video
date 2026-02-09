@@ -7,7 +7,7 @@ episode: 4
 videoId: "Episodio-4"
 driveId: "1HIWy-Lbd_t0cBUhEPsUn681JJ4v0liuO"
 thumbnail: ""
-duration: ""
+duration: "28:44"
 description: "Cuarto episodio de Sousou no Frieren"
 tags: ["anime", "sousou-no-frieren"]
 ---

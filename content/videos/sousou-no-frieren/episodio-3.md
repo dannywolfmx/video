@@ -7,7 +7,7 @@ episode: 3
 videoId: "Episodio-3"
 driveId: "1-V9RfiO_6khsahMhaFhFobHDtP0Eu05L"
 thumbnail: ""
-duration: ""
+duration: "26:31"
 description: "Tercer episodio de Sousou no Frieren"
 tags: ["anime", "sousou-no-frieren"]
 ---

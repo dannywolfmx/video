@@ -7,7 +7,7 @@ episode: 11
 videoId: "Episodio-11"
 driveId: "11Gjbo6zQre7e9jOlWE-koUqpPYNxh2cQ"
 thumbnail: ""
-duration: ""
+duration: "28:13"
 description: "Undécimo episodio de Sousou no Frieren"
 tags: ["anime", "sousou-no-frieren"]
 ---

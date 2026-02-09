@@ -7,7 +7,7 @@ episode: 5
 videoId: "Episodio-5"
 driveId: "1WM04DPMpjacmKNjblyvdeJ67ktRyOM_F"
 thumbnail: ""
-duration: ""
+duration: "26:14"
 description: "Quinto episodio de Sousou no Frieren"
 tags: ["anime", "sousou-no-frieren"]
 ---

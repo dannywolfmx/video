@@ -7,7 +7,7 @@ episode: 12
 videoId: "Episodio-12"
 driveId: "1G3HXDg3ivyPAKmPE5A7gK4YShKQQZDl3"
 thumbnail: ""
-duration: ""
+duration: "30:14"
 description: "Duodécimo episodio de Sousou no Frieren"
 tags: ["anime", "sousou-no-frieren"]
 ---

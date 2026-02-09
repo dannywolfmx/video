@@ -7,7 +7,7 @@ episode: 8
 videoId: "Episodio-8"
 driveId: "1Q97hiARiaiQzT07xnRsHi7J9TKaq4hWy"
 thumbnail: ""
-duration: ""
+duration: "24:37"
 description: "Octavo episodio de Sousou no Frieren"
 tags: ["anime", "sousou-no-frieren"]
 ---

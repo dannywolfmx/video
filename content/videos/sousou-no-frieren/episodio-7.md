@@ -7,7 +7,7 @@ episode: 7
 videoId: "Episodio-7"
 driveId: "14ljIr-bd_ZN2ibH97f-ktpcG31jSuWk_"
 thumbnail: ""
-duration: ""
+duration: "25:46"
 description: "Séptimo episodio de Sousou no Frieren"
 tags: ["anime", "sousou-no-frieren"]
 ---

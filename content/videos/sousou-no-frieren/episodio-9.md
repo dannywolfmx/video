@@ -7,7 +7,7 @@ episode: 9
 videoId: "Episodio-9"
 driveId: "1_va0SoYwx--T2fkzOSDH8ao9V9rfrG5C"
 thumbnail: ""
-duration: ""
+duration: "25:38"
 description: "Noveno episodio de Sousou no Frieren"
 tags: ["anime", "sousou-no-frieren"]
 ---
