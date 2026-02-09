@@ -5,11 +5,34 @@ document.addEventListener('DOMContentLoaded', function () {
    if (videoPlayer) {
       // Guardar progreso del video en localStorage
       const videoId = window.location.pathname;
+      const videoPage = document.querySelector('.video-page');
+      const autoplayEnabled = videoPage && videoPage.dataset.autoplay === 'true';
 
       // Restaurar posición guardada
       const savedTime = localStorage.getItem('video-time-' + videoId);
       if (savedTime) {
          videoPlayer.currentTime = parseFloat(savedTime);
+      }
+
+      // Autoplay al cargar la página
+      if (autoplayEnabled) {
+         const tryAutoplay = () => {
+            const playPromise = videoPlayer.play();
+            if (playPromise && typeof playPromise.catch === 'function') {
+               playPromise.catch(() => {
+                  if (!videoPlayer.muted) {
+                     videoPlayer.muted = true;
+                     return videoPlayer.play().catch(() => { });
+                  }
+               });
+            }
+         };
+
+         if (videoPlayer.readyState >= 2) {
+            tryAutoplay();
+         } else {
+            videoPlayer.addEventListener('loadedmetadata', tryAutoplay, { once: true });
+         }
       }
 
       // Guardar progreso cada 5 segundos
@@ -24,9 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
          localStorage.removeItem('video-time-' + videoId);
 
          // Autoplay: reproducir siguiente video si existe
-         const videoPage = document.querySelector('.video-page');
-         const autoplayEnabled = videoPage && videoPage.dataset.autoplay === 'true';
-
          if (autoplayEnabled && window.nextVideoUrl) {
             // Mostrar notificación antes de cambiar
             showAutoplayNotification();
