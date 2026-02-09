@@ -25,3 +25,7 @@ Thumbs.db
 *.mov
 *.mkv
 *.webm
+
+# Hugo
+public/
+/public
