@@ -63,12 +63,12 @@ Los archivos generados estarán en la carpeta `public/`
 
 ### Crear una nueva serie
 ```bash
-hugo new videos/nombre-serie/_index.md
+hugo new animes/nombre-serie/_index.md
 ```
 
 ### Crear un nuevo episodio
 ```bash
-hugo new videos/nombre-serie/episodio-1.md
+hugo new animes/nombre-serie/episodio-1.md
 ```
 
 ## Características
