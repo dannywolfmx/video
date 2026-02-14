@@ -3,27 +3,24 @@
    <div class="series-header">
       <h1>{{ .Title }}</h1>
       {{ if .Content }}
-      <p>{{ .Content }}</p>
+      <div class="section-description">
+         {{ .Content }}
+      </div>
       {{ end }}
    </div>
 
-   <div class="video-list video-list--episodes">
-      {{ range .Pages.ByParam "episode" }}
-      <div class="video-item">
+   {{/* Mostrar tarjetas de series/animes */}}
+   <div class="video-list video-list--series">
+      {{ range .Pages }}
+      <div class="video-item series-card">
          <a href="{{ .Permalink }}">
             <div class="video-thumbnail">
                {{ if .Params.thumbnail }}
                <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" loading="lazy">
-               {{ else if .Params.driveId }}
-               <img src="https://drive.google.com/thumbnail?id={{ .Params.driveId }}&sz=w480" alt="{{ .Title }}"
-                  loading="lazy">
                {{ else }}
                <div class="placeholder-thumbnail">
-                  <span>📹</span>
+                  <span>📺</span>
                </div>
-               {{ end }}
-               {{ if .Params.duration }}
-               <span class="duration">{{ .Params.duration }}</span>
                {{ end }}
             </div>
             <div class="video-info">
@@ -31,6 +28,7 @@
                {{ if .Params.description }}
                <p>{{ .Params.description }}</p>
                {{ end }}
+               <span class="episode-count">{{ len .Pages }} episodios</span>
             </div>
          </a>
       </div>

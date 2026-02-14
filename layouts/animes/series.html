@@ -1,0 +1,84 @@
+{{ define "main" }}
+<div class="container">
+   {{ if .Params.thumbnail }}
+   <div class="series-hero">
+      <div class="series-poster">
+         <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+      </div>
+      <div class="series-info">
+         <div class="series-title-wrapper">
+            <div class="title-decoration"></div>
+            <h1>{{ .Title }}</h1>
+         </div>
+         {{ if .Content }}
+         <div class="series-description">
+            {{ .Content }}
+         </div>
+         {{ end }}
+         <div class="series-meta">
+            <div class="meta-badge meta-badge--primary">
+               <div class="badge-icon">📺</div>
+               <div class="badge-content">
+                  <span class="meta-label">Total de episodios</span>
+                  <span class="meta-value">{{ len .Pages }}</span>
+               </div>
+            </div>
+            {{ if .Params.tags }}
+            <div class="meta-info-wrapper">
+               <div class="info-label">Categorías</div>
+               <div class="series-tags">
+                  {{ range .Params.tags }}
+                  <span class="tag">#{{ . }}</span>
+                  {{ end }}
+               </div>
+            </div>
+            {{ end }}
+         </div>
+      </div>
+   </div>
+   {{ else }}
+   <div class="series-header">
+      <h1>{{ .Title }}</h1>
+      {{ if .Content }}
+      <div class="series-description">
+         {{ .Content }}
+      </div>
+      {{ end }}
+   </div>
+   {{ end }}
+
+   <div class="episodes-section">
+      <h2 class="section-title">Episodios</h2>
+
+      <div class="video-list video-list--episodes">
+         {{ range .Pages.ByParam "episode" }}
+         <div class="video-item">
+            <a href="{{ .Permalink }}">
+               <div class="video-thumbnail">
+                  {{ if .Params.thumbnail }}
+                  <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" loading="lazy">
+                  {{ else if .Params.driveId }}
+                  <img src="https://drive.google.com/thumbnail?id={{ .Params.driveId }}&sz=w480" alt="{{ .Title }}"
+                     loading="lazy">
+                  {{ else }}
+                  <div class="placeholder-thumbnail">
+                     <span>📹</span>
+                  </div>
+                  {{ end }}
+                  {{ if .Params.duration }}
+                  <span class="duration">{{ .Params.duration }}</span>
+                  {{ end }}
+               </div>
+               <div class="video-info">
+                  <h3>{{ .Title }}</h3>
+                  {{ if .Params.description }}
+                  <p>{{ .Params.description }}</p>
+                  {{ end }}
+               </div>
+            </a>
+         </div>
+         {{ end }}
+      </div>
+   </div>
+</div>
+{{ end }}
